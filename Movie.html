@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    .box {
+        height: auto;
+        width: 60px;
+        border: 2px solid rgb(12, 14, 156);
+        margin: 2px;
+        border-top-left-radius: 13px;
+        border-top-right-radius: 13px;
+    }
+
+    .h2 {
+        color: blue;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: underline;
+    }
+
+    .parent {
+        display: flex;
+    }
+
+    .ticket {
+        border: 4px solid black;
+        margin: 4px;
+        height: auto;
+        width: auto;
+    }
+
+    .line {
+        margin-top: 5%;
+        height: 3px;
+        width: 100%;
+        background-image: linear-gradient(135deg, #715f9b 10%, #9f41f6 100%);
+
+    }
+
+    .col-4 {
+        text-align: center;
+        
+    }
+
+    .seats {
+        border-width: 2px;
+        border-color: #6a69c2;
+        border-style: solid;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    .checkbox{
+      opacity: 0;
+    }
+</style>
+
+<body style="background-color: rgb(154, 200, 207);">
+    <div class="container">
+        <div>
+            <h1 class="h2">Welcome to movie booking.com</h1>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+
+        <div class="row">
+            <div id="alert"></div>
+            <div class="col-4">
+                <div class="card" style="background-color: rgb(29, 31, 133);">
+                    <div class="card-body">
+                        <form action="">
+
+                        </form>
+                        <input type="text" id="username" placeholder="enter name" class="form-control" required><br>
+                        <input type="text" id="moviename" class="form-control" placeholder="enter movie name"
+                            required><br>
+                        <input type="date" id="userdate" class="form-control" required>
+                        <br>
+                        <input type="text" class="form-control" id="useramount" placeholder="enter amount of ticket"
+                            required>
+                        <br>
+                        <button class="btn btn-info form-control" onclick="showdata()"> Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="seats">
+                    <div class="parent">
+                        <!-- <div class="box"> <input type="checkbox" class="checkbox" id="myCheck" onclick="myFunction()"> <label>1</label> </div> -->
+                        <div class="box" id="d1" onclick="book('d1')">01</div>
+                        <div class="box" id="d2" onclick="book('d2')">02</div>
+                        <div class="box" id="d3" onclick="book('d3')">03</div>
+                        <div class="box" id="d4" onclick="book('d4')">04</div>
+                        <div class="box" id="d5" onclick="book('d5')">05</div>
+                        <div class="box" id="d6" onclick="book('d6')">06</div>
+                    </div>
+                    <div class="parent">
+                        <div class="box" id="d7" onclick="book('d7')">07</div>
+                        <div class="box" id="d8" onclick="book('d8')">08</div>
+                        <div class="box" id="d9" onclick="book('d9')">09</div>
+                        <div class="box" id="d10" onclick="book('d10')">10</div>
+                        <div class="box" id="d11" onclick="book('d11')">11</div>
+                        <div class="box" id="d12" onclick="book('d12')">12</div>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <br>
+                    <div class="parent">
+                        <div class="box" id="d13" onclick="book('d13')">13</div>
+                        <div class="box" id="d14" onclick="book('d14')">14</div>
+                        <div class="box" id="d15" onclick="book('d15')">15</div>
+                        <div class="box" id="d16" onclick="book('d16')">16</div>
+                        <div class="box" id="d17" onclick="book('d17')">17</div>
+                        <div class="box" id="d18" onclick="book('d18')">18</div>
+                    </div>
+                    <div class="parent">
+                        <div class="box" id="d19" onclick="book('d19')">19</div>
+                        <div class="box" id="d20" onclick="book('d20')">20</div>
+                        <div class="box" id="d21" onclick="book('d21')">21</div>
+                        <div class="box" id="d22" onclick="book('d22')">22</div>
+                        <div class="box" id="d23" onclick="book('d23')">23</div>
+                        <div class="box" id="d24" onclick="book('d24')">24</div>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <br>
+                    <div class="parent">
+                        <div class="box" id="d25" onclick="book('d25')">25</div>
+                        <div class="box" id="d26" onclick="book('d26')">26</div>
+                        <div class="box" id="d27" onclick="book('d27')">27</div>
+                        <div class="box" id="d28" onclick="book('d28')">28</div>
+                        <div class="box" id="d29" onclick="book('d29')">29</div>
+                        <div class="box" id="d30" onclick="book('d30')">30</div>
+                    </div>
+                    <div class="parent">
+                        <div class="box" id="d31" onclick="book('d31')">31</div>
+                        <div class="box" id="d32" onclick="book('d32')">32</div>
+                        <div class="box" id="d33" onclick="book('d33')">33</div>
+                        <div class="box" id="d34" onclick="book('d34')">34</div>
+                        <div class="box" id="d35" onclick="book('d35')">35</div>
+                        <div class="box" id="d36" onclick="book('d36')">36</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <span id="seatnumber"></span>
+                <div id="output">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var seat = 0;
+        function book(id) {
+            document.getElementById("alert").innerHTML = "";
+            var hasclass = document.getElementById(id).classList.contains('bg-danger');
+
+            if (hasclass == false) {
+
+                document.getElementById(id).classList.add('bg-danger');
+                seat++;
+            } else {
+                document.getElementById("alert").innerHTML = `
+                    <div class="alert alert-danger"><h3>Seat is already booked</h3></div>
+                    `;
+            }
+
+            console.log("selected seat " + id);
+            document.getElementById("seatnumber").innerHTML = `
+              <div> NO. Of Booked Seates=${seat} </div>
+            
+            `
+        }
+        var array = [];
+        function showdata() {
+
+            var name = document.getElementById("username").value;
+            var movie = document.getElementById("moviename").value;
+            var date = document.getElementById("userdate").value;
+            var amount = document.getElementById("useramount").value;
+            var obj = {
+                uname: name,
+                umovie: movie,
+                udate: date,
+                uamount: amount
+            }
+            array.push(obj);
+            var ldata = JSON.parse(localStorage.getItem("info"));
+
+            if (ldata == null) {
+                localStorage.setItem("info", JSON.stringify(array));
+            } else {
+                var cdata = ldata.concat(array);
+                localStorage.setItem("info", JSON.stringify(cdata));
+            }
+            displaydata();
+
+        }
+        function displaydata() {
+            var alldata = JSON.parse(localStorage.getItem("info"));
+            document.getElementById("output").innerHTML = "";
+            for (let i = 0; i < array.length; i++) {
+                document.getElementById("output").innerHTML += `
+                <div class="card">
+                    <div class="ticket">
+                       <span class="mx-2">${array[i].uname} </span>
+                       <span  style="margin:100px;" class="mx-2">${array[i].umovie} </span>
+                      <br>
+                       <span class="mx-2">${array[i].udate}</span>
+                    <br>
+                       <span class="mx-2">${array[i].uamount} </span>
+                     </div>
+                </div>
+                `;
+            }
+        }
+        function myFunction() {
+            // Get the checkbox
+            var checkBox = document.getElementById("myCheck");
+            // Get the output text
+            var text = document.getElementById("text");
+
+            // If the checkbox is checked, display the output text
+            if (checkBox.checked == true) {
+             alert("checked");
+            } else {
+                alert("unchecked");
+            }
+        }
+    </script>
+</body>
+
+</html>
